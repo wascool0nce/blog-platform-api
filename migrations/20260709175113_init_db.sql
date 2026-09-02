@@ -1,0 +1,13 @@
+-- +goose Up
+CREATE TABLE IF NOT EXISTS posts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title VARCHAR(150) NOT NULL,
+    content TEXT NOT NULL,
+    category VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP
+);
+
+
+-- +goose Down
+DROP TABLE IF EXISTS posts;

@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"os"
+
+	"github.com/wascool0nce/blog-platform-api/intenal/app"
+)
 
 func main() {
-	fmt.Println("Hello world")
+	if err := app.Run(); err != nil {
+		os.Exit(-1)
+	}
 }
